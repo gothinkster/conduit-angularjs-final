@@ -1,7 +1,7 @@
 # Conduit AngularJS Starter
 
-`git clone --recursive git@github.com:GoThinkster/conduit-angularjs.git`
+1. Clone repo
+2. `npm install`
+3. `gulp`
 
-Or, if you've already cloned it:
-
-`git submodule update --init --recursive`
+Make sure you have gulp installed globally (`npm install -g gulp`)
