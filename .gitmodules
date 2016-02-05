@@ -1,0 +1,6 @@
+[submodule "src/sass/conduit-sass"]
+	path = src/sass/conduit-sass
+	url = git@github.com:GoThinkster/conduit-sass.git
+[submodule "src/sass/bootstrap"]
+	path = src/sass/bootstrap
+	url = https://github.com/twbs/bootstrap.git
