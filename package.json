@@ -11,8 +11,10 @@
   "dependencies": {
     "angular": "^1.5.0-rc.2",
     "babel-preset-es2015": "^6.3.13",
+    "bootstrap": "^4.0.0-alpha.2",
     "browser-sync": "^2.11.1",
     "browserify": "^13.0.0",
+    "conduit-sass": "0.0.1",
     "gulp": "^3.9.0",
     "gulp-minify-css": "^1.2.3",
     "gulp-sass": "^2.2.0",

@@ -1,8 +1,8 @@
 // Include Conduit specific styles
-@import 'conduit-sass/conduit.scss';
+@import '../../node_modules/conduit-sass/conduit.scss';
 
 // Include Bootstrap 4
-@import 'bootstrap/scss/bootstrap.scss';
+@import '../../node_modules/bootstrap/scss/bootstrap.scss';
 
 .trake {
   color: $brand-primary;
