@@ -35,3 +35,4 @@ node_modules
 .DS_Store
 
 build/*
+src/js/config/app.templates.js
