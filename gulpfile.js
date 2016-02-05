@@ -70,7 +70,7 @@ gulp.task('default',function() {
     server: "./build"
   });
 
-  gulp.start(['browserify', 'sass', 'html', 'views']);
+  gulp.start(['sass', 'html', 'views', 'browserify']);
 
   gulp.watch(sassFiles, ['sass']);
   gulp.watch("src/index.html", ['html']);
