@@ -1,6 +1,20 @@
-Here is a random number: {{ home.number }}. <a href="#/profile">Go to profile</a>
-<button ng-click="home.getThing()">click</button>
-<box></box>
+<div class="home-page">
 
-<br /><br /><br />
-<div ng-repeat="name in home._Names.list">{{ name }}</div>
+  <div class="banner">
+    <div class="container">
+      <h1 class="logo-font">conduit</h1>
+      <p>A place to share your knowledge.</p>
+    </div>
+  </div>
+
+  <div class="container page">
+
+    Here is a random number: {{ home.number }}. <a href="#/profile">Go to profile</a>
+    <button ng-click="home.getThing()">click</button>
+    <box></box>
+
+    <br /><br /><br />
+    <div ng-repeat="name in home._Names.list">{{ name }}</div>
+
+  </div>
+</div>

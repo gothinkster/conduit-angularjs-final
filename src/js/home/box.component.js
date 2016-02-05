@@ -2,7 +2,6 @@ class BoxController {
   constructor() {
     'ngInject';
     this.test = "Jacob!"
-    console.log(this)
   }
 }
 
