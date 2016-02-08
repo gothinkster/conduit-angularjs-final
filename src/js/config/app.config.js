@@ -8,19 +8,26 @@ function AppConfig($stateProvider, $locationProvider, $urlRouterProvider) {
   // $locationProvider.html5Mode(true);
 
   $stateProvider
-  .state('Home', {
-    url: '/',
-    controller: 'ExampleCtrl as home',
-    templateUrl: 'home/home.html',
-    title: 'Home'
-  })
+  // .state('Home', {
+  //   url: '/',
+  //   controller: 'ExampleCtrl as home',
+  //   templateUrl: 'home/home.html',
+  //   title: 'Home'
+  // })
 
-  .state('Profile', {
-    url: '/profile',
-    controller: 'ProfileCtrl as profile',
-    templateUrl: 'profile/profile.html',
-    title: 'Profile'
-  });
+  // .state('Profile', {
+  //   url: '/profile',
+  //   controller: 'ProfileCtrl as profile',
+  //   templateUrl: 'profile/profile.html',
+  //   title: 'Profile'
+  // })
+
+  // .state('Article', {
+  //   url: '/article',
+  //   controller: 'ArticleCtrl as article',
+  //   templateUrl: 'article/article.html',
+  //   title: 'Article'
+  // });
 
   $urlRouterProvider.otherwise('/');
 

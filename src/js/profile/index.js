@@ -3,6 +3,9 @@ import angular from 'angular';
 // Create the home module where our functionality can attach to
 let profileModule = angular.module('app.profile', []);
 
+// Include our UI-Router config settings
+import ProfileConfig from './profile.config';
+profileModule.config(ProfileConfig);
 
 // Controllers
 import ProfileCtrl from './profile.controller';

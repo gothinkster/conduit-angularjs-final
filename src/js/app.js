@@ -9,8 +9,10 @@ import 'angular-ui-router';
 import './config/app.templates';
 // Import our app functionaity
 import './layout';
+import './components';
 import './home';
 import './profile';
+import './article';
 
 
 // Create and bootstrap application
@@ -18,8 +20,10 @@ const requires = [
   'ui.router',
   'templates',
   'app.layout',
+  'app.components',
   'app.home',
-  'app.profile'
+  'app.profile',
+  'app.article'
 ];
 
 // Mount on window for testing
