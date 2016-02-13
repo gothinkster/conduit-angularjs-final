@@ -6,6 +6,9 @@ class ArticlePreviewCtrl {
 }
 
 let ArticlePreview = {
+  bindings: {
+    articleData: '='
+  },
   controller: ArticlePreviewCtrl,
   templateUrl: 'components/article-preview.html'
 };

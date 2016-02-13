@@ -13,6 +13,7 @@ import './components';
 import './home';
 import './profile';
 import './article';
+import './writer';
 
 
 // Create and bootstrap application
@@ -23,7 +24,8 @@ const requires = [
   'app.components',
   'app.home',
   'app.profile',
-  'app.article'
+  'app.article',
+  'app.writer'
 ];
 
 // Mount on window for testing

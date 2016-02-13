@@ -1,0 +1,31 @@
+<div class="editor-page">
+  <div class="container page">
+    <div class="row">
+
+      <div class="col-md-10 col-md-offset-1 col-xs-12">
+        <form>
+          <fieldset ng-disabled="writer.isSubmitting">
+            <fieldset class="form-group">
+              <input class="form-control form-control-lg" ng-model="writer.article.title" type="text" placeholder="Post Title">
+            </fieldset>
+            <fieldset class="form-group">
+              <textarea class="form-control" rows="8" ng-model="writer.article.body" placeholder="Write your post (in markdown)"></textarea>
+            </fieldset>
+            <fieldset class="form-group">
+              <input class="form-control" type="text" placeholder="Enter tags" ng-model="writer.tagField" ng-keyup="$event.keyCode == 13 && writer.addTag()">
+              <div class="tag-list">
+                <span class="label label-pill label-default" ng-repeat="tag in writer.article.tags">
+                  <i class="ion-close-round" ng-click="writer.removeTag(tag)"></i> {{ tag }}
+                </span>
+              </div>
+            </fieldset>
+            <button class="btn btn-lg pull-xs-right" ng-class="{ 'btn-primary': !writer.isSubmitting, 'btn-secondary': writer.isSubmitting }" type="button" ng-click="writer.save()">
+              {{ writer.isSubmitting ? 'Publishing Article...' : 'Publish Article' }}
+            </button>
+          </fieldset>
+        </form>
+      </div>
+
+    </div>
+  </div>
+</div>
