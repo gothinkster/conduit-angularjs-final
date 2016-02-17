@@ -14,6 +14,8 @@ import './home';
 import './profile';
 import './article';
 import './writer';
+import './auth';
+import './settings';
 
 
 // Create and bootstrap application
@@ -25,7 +27,9 @@ const requires = [
   'app.home',
   'app.profile',
   'app.article',
-  'app.writer'
+  'app.writer',
+  'app.auth',
+  'app.settings'
 ];
 
 // Mount on window for testing

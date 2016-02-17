@@ -12,7 +12,8 @@ class WriterCtrl {
     }
 
     this.addTag = () => {
-      if (this.article.tags.indexOf(this.tagField) < 0 && !this.isSubmitting) {
+      // array includes method
+      if (!this.article.tags.includes(this.tagField) && !this.isSubmitting) {
         this.article.tags.push(this.tagField);
         this.tagField = '';
       }
