@@ -12,5 +12,9 @@ articleModule.config(ArticleConfig);
 import ArticleCtrl from './article.controller';
 articleModule.controller('ArticleCtrl', ArticleCtrl);
 
+// Components
+import Comment from './comment.component';
+articleModule.component('comment', Comment);
+
 
 export default articleModule;

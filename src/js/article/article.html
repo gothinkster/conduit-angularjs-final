@@ -6,24 +6,12 @@
 
       <h1>How to build webapps that scale</h1>
 
-      <div class="post-meta">
-        <a href="profile.html"><img src="http://i.imgur.com/Qr71crq.jpg" /></a>
-        <div class="info">
-          <a href="profile.html" class="author">Eric Simons</a>
-          <span class="date">January 20th</span>
-        </div>
-        <button class="btn btn-sm btn-outline-secondary">
-          <i class="ion-plus-round"></i>
-          &nbsp;
-          Follow Eric Simons <span class="counter">(10)</span>
-        </button>
-        &nbsp;&nbsp;
-        <button class="btn btn-sm btn-outline-primary">
-          <i class="ion-heart"></i>
-          &nbsp;
+      <article-meta article-data="article.data">
+        <follow-btn author-data="article.data.author"></follow-btn>
+        <favorite-btn article-id="article.data.id">
           Favorite Post <span class="counter">(29)</span>
-        </button>
-      </div>
+        </favorite-btn>
+      </article-meta>
 
     </div>
   </div>
@@ -45,62 +33,19 @@
     <hr />
 
     <div class="post-actions">
-      <div class="post-meta">
-        <a href="profile.html"><img src="http://i.imgur.com/Qr71crq.jpg" /></a>
-        <div class="info">
-          <a href="profile.html" class="author">Eric Simons</a>
-          <span class="date">January 20th</span>
-        </div>
-
-        <button class="btn btn-sm btn-outline-secondary">
-          <i class="ion-plus-round"></i>
-          &nbsp;
-          Follow Eric Simons <span class="counter">(10)</span>
-        </button>
-        &nbsp;
-        <button class="btn btn-sm btn-outline-primary">
-          <i class="ion-heart"></i>
-          &nbsp;
+      <article-meta article-data="article.data">
+        <follow-btn author-data="article.data.author"></follow-btn>
+        <favorite-btn article-id="article.data.id">
           Favorite Post <span class="counter">(29)</span>
-        </button>
-      </div>
+        </favorite-btn>
+      </article-meta>
     </div>
 
     <div class="row">
-
       <div class="col-xs-12 col-md-8 offset-md-2">
 
-        <div class="card">
-          <div class="card-block">
-            <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
-          </div>
-          <div class="card-footer">
-            <a href="profile.html" class="comment-author">
-              <img src="http://i.imgur.com/Qr71crq.jpg" class="comment-author-img" />
-            </a>
-            &nbsp;
-            <a href="profile.html" class="comment-author">Jacob Schmidt</a>
-            <span class="date-posted">Dec 29th</span>
-          </div>
-        </div>
-
-        <div class="card">
-          <div class="card-block">
-            <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
-          </div>
-          <div class="card-footer">
-            <a href="profile.html" class="comment-author">
-              <img src="http://i.imgur.com/Qr71crq.jpg" class="comment-author-img" />
-            </a>
-            &nbsp;
-            <a href="profile.html" class="comment-author">Jacob Schmidt</a>
-            <span class="date-posted">Dec 29th</span>
-            <span class="mod-options">
-              <i class="ion-edit"></i>
-              <i class="ion-trash-a"></i>
-            </span>
-          </div>
-        </div>
+        <comment is-author="false"></comment>
+        <comment is-author="true"></comment>
 
         <form class="card comment-form">
           <div class="card-block">
@@ -115,7 +60,6 @@
         </form>
 
       </div>
-
     </div>
 
   </div>

@@ -1,6 +1,8 @@
 class ExampleCtrl {
-  constructor($rootScope, Names) {
+  constructor($rootScope, AppConstants, Names) {
     'ngInject';
+
+    this.appName = AppConstants.appName;
 
     // $rootScope.setPageTitle("Eric Simons");
 
