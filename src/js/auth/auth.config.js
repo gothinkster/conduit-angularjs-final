@@ -1,5 +1,12 @@
-function AuthConfig($stateProvider) {
+import authInterceptor from './auth.interceptor';
+
+
+function AuthConfig($stateProvider, $httpProvider) {
   'ngInject';
+
+  // Push our interceptor for auth
+  $httpProvider.interceptors.push(authInterceptor);
+
 
   $stateProvider
 

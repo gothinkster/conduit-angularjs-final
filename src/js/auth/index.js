@@ -12,5 +12,9 @@ authModule.config(AuthConfig);
 import AuthCtrl from './auth.controller';
 authModule.controller('AuthCtrl', AuthCtrl);
 
+// Services
+import AuthService from './auth.service';
+authModule.service('Auth', AuthService);
+
 
 export default authModule;

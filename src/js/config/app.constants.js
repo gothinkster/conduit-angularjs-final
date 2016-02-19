@@ -1,6 +1,7 @@
 const AppConstants = {
-  api: 'localhost:3000',
-  appName: 'Conduit'
+  api: 'http://localhost:3000',
+  jwtKey: 'jwtToken',
+  appName: 'Conduit',
 };
 
 export default AppConstants;

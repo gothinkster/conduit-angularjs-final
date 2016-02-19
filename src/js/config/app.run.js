@@ -1,4 +1,4 @@
-function AppRun($rootScope, AppConstants) {
+function AppRun(AppConstants, $rootScope) {
   'ngInject';
 
   // change page title based on state
