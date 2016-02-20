@@ -9,13 +9,21 @@
           <a ng-show="auth.stateIs.login" ui-sref="register">Need an account?</a>
         </p>
 
-<!--         <ul class="error-messages">
-          <li>That email is already taken</li>
-        </ul> -->
+        <ul class="error-messages" ng-show="auth.errors">
+          <li ng-repeat="(field, errors) in auth.errors">
+            Your {{field}}
+            <ul>
+              <li ng-repeat="error in errors">
+                {{error}}
+              </li>
+            </ul>
+          </li>
+        </ul>
+
         <form ng-submit="auth.submitForm()">
           <fieldset ng-disabled="auth.isSubmitting">
             <fieldset class="form-group" ng-show="auth.stateIs.register">
-              <input class="form-control form-control-lg" ng-model="auth.formData.name" type="text" placeholder="Your Name">
+              <input class="form-control form-control-lg" ng-model="auth.formData.username" type="text" placeholder="Username">
             </fieldset>
             <fieldset class="form-group">
               <input class="form-control form-control-lg" type="email" placeholder="Email" ng-model="auth.formData.email">
@@ -27,8 +35,6 @@
           </fieldset>
         </form>
       </div>
-
-      {{ auth._Auth.isAuthed() }}
 
     </div>
   </div>

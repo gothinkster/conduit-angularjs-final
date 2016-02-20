@@ -1,9 +1,10 @@
-function authInterceptor(AppConstants, $window, $location, $q) {
+function authInterceptor(JWT, AppConstants, $location, $q) {
   'ngInject';
+  let token = JWT.get();
+
   return {
     // automatically attach Authorization header
     request: function(config) {
-      let token = $window.localStorage[AppConstants.jwtKey];
       if(config.url.indexOf(AppConstants.api) === 0 && token) {
         config.headers.Authorization = 'Token ' + token;
       }
@@ -13,7 +14,10 @@ function authInterceptor(AppConstants, $window, $location, $q) {
     // Handle 401
     responseError: function(rejection) {
       if (rejection.status === 401) {
-        $location.path('/')
+        // clear any JWT token being stored
+        JWT.destroy();
+        // redirect to the homepage
+        $location.path('/');
       }
       return $q.reject(rejection);
     }

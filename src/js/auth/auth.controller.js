@@ -1,11 +1,10 @@
 class AuthCtrl {
-  constructor(Auth, AppConstants, $http, $state) {
+  constructor(User, AppConstants, $http, $state) {
     'ngInject';
 
     // Attach our services to this controller
     this._AppConstants = AppConstants;
-    this._Auth = Auth;
-    this._$http = $http;
+    this._User = User;
 
     this.title = $state.current.title;
     this.stateName = $state.current.name;
@@ -18,7 +17,8 @@ class AuthCtrl {
       register: this.stateName == 'register'
     }
 
-    this.formData = {}
+    this.formData = {};
+    this.errors = null;
 
   }
 
@@ -27,21 +27,19 @@ class AuthCtrl {
 
     this.isSubmitting = true;
 
-    if (!this._Auth.isAuthed()) {
-      this._Auth.attempt(this.stateName, {});
-    } else {
-      console.log('authed already')
-    }
-    // this._$http({
-    //   url: this._AppConstants.api + '/api/profiles/eric/follow',
-    //   method: 'POST',
-    //   data: {
-    //     user: {
-    //       email: 'eric@esft.com',
-    //       password: 'sagetlick'
-    //     }
-    //   }
-    // })
+    // if (!this._Auth.isAuthed()) {
+    this._User.attemptAuth(this.stateName, this.formData).then(
+      // Callback for success
+      (res) => {
+        this.isSubmitting = false;
+      },
+      // Callback for failure
+      (err) => {
+        this.isSubmitting = false;
+        this.errors = err.data.errors;
+      }
+    );
+
   }
 
 }
