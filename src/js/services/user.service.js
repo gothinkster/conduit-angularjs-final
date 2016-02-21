@@ -5,6 +5,7 @@ export default class User {
     this._AppConstants = AppConstants;
     this._$http = $http;
     this._JWT = JWT;
+    this._$q = $q;
 
     // Object to store our user properties
     this.current = null;
@@ -32,8 +33,8 @@ export default class User {
     );
   }
 
-  checkAuth() {
-    let deferred = $q.defer();
+  verifyAuth() {
+    let deferred = this._$q.defer();
 
     // Check for JWT token first
     if (!this._JWT.get()) {
@@ -65,7 +66,7 @@ export default class User {
 
   logout() {
     this.current = null;
-    _JWT.destroy();
+    this._JWT.destroy();
   }
 
 

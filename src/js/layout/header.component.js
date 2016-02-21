@@ -1,7 +1,8 @@
 class AppHeaderCtrl {
-  constructor(AppConstants) {
+  constructor(AppConstants, User) {
     'ngInject';
-    this.appName = AppConstants.appName;
+    this._AppConstants = AppConstants;
+    this._User = User;
   }
 }
 

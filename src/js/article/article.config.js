@@ -2,7 +2,7 @@ function ArticleConfig($stateProvider) {
   'ngInject';
 
   $stateProvider
-  .state('Article', {
+  .state('article', {
     url: '/article',
     controller: 'ArticleCtrl as article',
     templateUrl: 'article/article.html',

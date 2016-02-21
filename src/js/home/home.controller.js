@@ -1,19 +1,10 @@
-class ExampleCtrl {
-  constructor($rootScope, AppConstants, Names) {
+class HomeCtrl {
+  constructor(User, AppConstants) {
     'ngInject';
 
-    this.appName = AppConstants.appName;
-
-    // $rootScope.setPageTitle("Eric Simons");
-
-    this._Names = Names;
-
-    this.number = 1234;
+    this._AppConstants = AppConstants;
   }
 
-  getThing() {
-    this._Names.add('Cuh LAY tun');
-  };
 }
 
-export default ExampleCtrl;
+export default HomeCtrl;

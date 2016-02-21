@@ -4,7 +4,8 @@ function WriterConfig($stateProvider) {
   $stateProvider
   .state('writer', {
     url: '/writer/:articleId',
-    controller: 'WriterCtrl as writer',
+    controller: 'WriterCtrl',
+    controllerAs: '$ctrl',
     templateUrl: 'writer/writer.html',
     title: 'Writer'
   });

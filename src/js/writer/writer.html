@@ -4,23 +4,23 @@
 
       <div class="col-md-10 offset-md-1 col-xs-12">
         <form>
-          <fieldset ng-disabled="writer.isSubmitting">
+          <fieldset ng-disabled="$ctrl.isSubmitting">
             <fieldset class="form-group">
-              <input class="form-control form-control-lg" ng-model="writer.article.title" type="text" placeholder="Post Title">
+              <input class="form-control form-control-lg" ng-model="$ctrl.article.title" type="text" placeholder="Post Title">
             </fieldset>
             <fieldset class="form-group">
-              <textarea class="form-control" rows="8" ng-model="writer.article.body" placeholder="Write your post (in markdown)"></textarea>
+              <textarea class="form-control" rows="8" ng-model="$ctrl.article.body" placeholder="Write your post (in markdown)"></textarea>
             </fieldset>
             <fieldset class="form-group">
-              <input class="form-control" type="text" placeholder="Enter tags" ng-model="writer.tagField" ng-keyup="$event.keyCode == 13 && writer.addTag()">
+              <input class="form-control" type="text" placeholder="Enter tags" ng-model="$ctrl.tagField" ng-keyup="$event.keyCode == 13 && $ctrl.addTag()">
               <div class="tag-list">
-                <span class="label label-pill label-default" ng-repeat="tag in writer.article.tags">
-                  <i class="ion-close-round" ng-click="writer.removeTag(tag)"></i> {{ tag }}
+                <span class="label label-pill label-default" ng-repeat="tag in $ctrl.article.tags">
+                  <i class="ion-close-round" ng-click="$ctrl.removeTag(tag)"></i> {{ tag }}
                 </span>
               </div>
             </fieldset>
-            <button class="btn btn-lg pull-xs-right" ng-class="{ 'btn-primary': !writer.isSubmitting, 'btn-secondary': writer.isSubmitting }" type="button" ng-click="writer.save()">
-              {{ writer.isSubmitting ? 'Publishing Article...' : 'Publish Article' }}
+            <button class="btn btn-lg pull-xs-right" ng-class="{ 'btn-primary': !$ctrl.isSubmitting, 'btn-secondary': $ctrl.isSubmitting }" type="button" ng-click="$ctrl.save()">
+              {{ $ctrl.isSubmitting ? 'Publishing Article...' : 'Publish Article' }}
             </button>
           </fieldset>
         </form>

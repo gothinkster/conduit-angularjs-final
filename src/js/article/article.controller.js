@@ -1,9 +1,8 @@
 class PostCtrl {
-  constructor($rootScope, Names) {
+  constructor($rootScope) {
     'ngInject';
     this.number = 1234;
 
-    this._Names = Names;
   }
 }
 

@@ -1,21 +1,38 @@
 <nav class="navbar navbar-light">
   <div class="container">
-    <a class="navbar-brand" ui-sref="Home" ng-bind="$ctrl.appName | lowercase"></a>
-    <ul class="nav navbar-nav pull-xs-right">
+    <a class="navbar-brand" ui-sref="home" ng-bind="::$ctrl._AppConstants.appName | lowercase"></a>
+
+    <!-- Show this for logged out users -->
+    <ul class="nav navbar-nav pull-xs-right" ng-hide="$ctrl._User.current">
       <li class="nav-item">
-        <a class="nav-link" ui-sref="writer({articleId: 1})">
+        <a class="nav-link" ui-sref-active="active" ui-sref="home">Home</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" ui-sref-active="active" ui-sref="login">Sign in</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" ui-sref-active="active" ui-sref="register">Sign up</a>
+      </li>
+    </ul>
+
+    <!-- Show this for logged in users -->
+    <ul class="nav navbar-nav pull-xs-right" ng-show="$ctrl._User.current">
+      <li class="nav-item">
+        <a class="nav-link" ui-sref-active="active" ui-sref="home">Home</a>
+      </li>
+      <li class="nav-item">
+        <a ui-sref-active="active" class="nav-link" ui-sref="writer">
+          <!-- writer({articleId: 1}) -->
           <i class="ion-compose"></i>&nbsp;New Post
         </a>
       </li>
       <li class="nav-item">
-        <a class="nav-link" ui-sref="register">Sign up</a>
+        <a class="nav-link" ui-sref-active="active" ui-sref="settings">Settings</a>
       </li>
       <li class="nav-item">
-        <a class="nav-link" ui-sref="Settings">Settings</a>
+        <a class="nav-link" href="#" ng-click="$ctrl._User.logout()">Logout</a>
       </li>
-<!--           <li class="nav-item active">
-        <a class="nav-link" href="index.html">Home</a>
-      </li> -->
     </ul>
+
   </div>
 </nav>

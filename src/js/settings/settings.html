@@ -5,23 +5,23 @@
       <div class="col-md-6 offset-md-3 col-xs-12">
         <h1 class="text-xs-center">Your Settings</h1>
 
-        <form ng-submit="settings.submitForm()">
-          <fieldset ng-disabled="settings.isSubmitting">
+        <form ng-submit="$ctrl.submitForm()">
+          <fieldset ng-disabled="$ctrl.isSubmitting">
             <fieldset class="form-group">
-              <input class="form-control" type="text" placeholder="URL of profile picture" ng-model="settings.formData.picURL">
+              <input class="form-control" type="text" placeholder="URL of profile picture" ng-model="$ctrl.formData.picURL">
   <!--             <input type="file" id="file"> -->
             </fieldset>
             <fieldset class="form-group">
-              <input class="form-control form-control-lg" type="text" placeholder="Your Name" ng-model="settings.formData.name">
+              <input class="form-control form-control-lg" type="text" placeholder="Your Name" ng-model="$ctrl.formData.name">
             </fieldset>
             <fieldset class="form-group">
-              <textarea class="form-control form-control-lg" rows="8" placeholder="Short bio about you" ng-model="settings.formData.bio"></textarea>
+              <textarea class="form-control form-control-lg" rows="8" placeholder="Short bio about you" ng-model="$ctrl.formData.bio"></textarea>
             </fieldset>
             <fieldset class="form-group">
-              <input class="form-control form-control-lg" type="email" placeholder="Email" ng-model="settings.formData.email">
+              <input class="form-control form-control-lg" type="email" placeholder="Email" ng-model="$ctrl.formData.email">
             </fieldset>
             <fieldset class="form-group">
-              <input class="form-control form-control-lg" type="password" placeholder="New Password" ng-model="settings.formData.password">
+              <input class="form-control form-control-lg" type="password" placeholder="New Password" ng-model="$ctrl.formData.password">
             </fieldset>
             <button class="btn btn-lg btn-primary pull-xs-right" type="submit">
               Update Settings

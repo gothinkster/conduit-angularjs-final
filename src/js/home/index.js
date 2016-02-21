@@ -9,16 +9,8 @@ homeModule.config(HomeConfig);
 
 
 // Controllers
-import ExampleCtrl from './home.controller';
-homeModule.controller('ExampleCtrl', ExampleCtrl);
-
-// Components
-import BoxComponent from './box.component';
-homeModule.component('box', BoxComponent);
-
-// Services
-import NamesService from './names.service';
-homeModule.service('Names', NamesService);
+import HomeCtrl from './home.controller';
+homeModule.controller('HomeCtrl', HomeCtrl);
 
 
 export default homeModule;

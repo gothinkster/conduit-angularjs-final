@@ -2,9 +2,10 @@ function ProfileConfig($stateProvider) {
   'ngInject';
 
   $stateProvider
-  .state('Profile', {
+  .state('profile', {
     url: '/profile',
-    controller: 'ProfileCtrl as profile',
+    controller: 'ProfileCtrl',
+    controllerAs: '$ctrl',
     templateUrl: 'profile/profile.html',
     title: 'Profile'
   });
