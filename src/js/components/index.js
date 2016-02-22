@@ -17,5 +17,8 @@ componentsModule.component('favoriteBtn', FavoriteBtn);
 import FollowBtn from './follow-btn.component';
 componentsModule.component('followBtn', FollowBtn);
 
+import ListErrors from './list-errors.component';
+componentsModule.component('listErrors', ListErrors);
+
 
 export default componentsModule;

@@ -15,7 +15,7 @@ export default class User {
   attemptAuth(type, credentials) {
     let route = (type === 'login') ? '/sign_in' : '';
     return this._$http({
-      url: this._AppConstants.api + '/api/users' + route,
+      url: this._AppConstants.api + '/users' + route,
       method: 'POST',
       data: {
         user: credentials
@@ -34,11 +34,15 @@ export default class User {
   }
 
   verifyAuth() {
+    // Should we return the promise at different points in here?
+    // Unclear atm.
+
     let deferred = this._$q.defer();
 
     // Check for JWT token first
     if (!this._JWT.get()) {
       deferred.reject();
+      return deferred.promise;
     }
 
     // If there's a JWT & user is already set
@@ -49,7 +53,7 @@ export default class User {
     // If server doesn't 401, set current user & resolve promise.
     } else {
       this._$http({
-        url: this._AppConstants.api + '/api/profiles/eric',
+        url: this._AppConstants.api + '/profiles/eric',
         method: 'GET',
       }).then(
         (res) => {

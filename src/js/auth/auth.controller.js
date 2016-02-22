@@ -1,10 +1,11 @@
 class AuthCtrl {
-  constructor(User, AppConstants, $http, $state) {
+  constructor(User, AppConstants, $state) {
     'ngInject';
 
     // Attach our services to this controller
     this._AppConstants = AppConstants;
     this._User = User;
+    this._$state = $state;
 
     this.title = $state.current.title;
     this.stateName = $state.current.name;
@@ -31,7 +32,7 @@ class AuthCtrl {
     this._User.attemptAuth(this.stateName, this.formData).then(
       // Callback for success
       (res) => {
-        this.isSubmitting = false;
+        this._$state.go('home');
       },
       // Callback for failure
       (err) => {

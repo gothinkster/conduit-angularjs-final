@@ -48,7 +48,7 @@
         <div class="sidebar">
           <p>Popular Tags</p>
 
-          <div class="tag-list">
+          <div class="tag-list" ng-show="$ctrl.tags">
             <a href="#" class="label label-pill label-default">programming</a>
             <a href="#" class="label label-pill label-default">javascript</a>
             <a href="#" class="label label-pill label-default">angularjs</a>
@@ -56,6 +56,10 @@
             <a href="#" class="label label-pill label-default">mean</a>
             <a href="#" class="label label-pill label-default">node</a>
             <a href="#" class="label label-pill label-default">rails</a>
+            {{$ctrl.tags}}
+          </div>
+          <div ng-hide="$ctrl.tags">
+            Loading...
           </div>
         </div>
       </div>

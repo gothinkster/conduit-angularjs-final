@@ -9,16 +9,7 @@
           <a ng-show="$ctrl.stateIs.login" ui-sref="register">Need an account?</a>
         </p>
 
-        <ul class="error-messages" ng-show="$ctrl.errors">
-          <li ng-repeat="(field, errors) in $ctrl.errors">
-            Your {{field}}
-            <ul>
-              <li ng-repeat="error in errors">
-                {{error}}
-              </li>
-            </ul>
-          </li>
-        </ul>
+        <list-errors from="$ctrl.errors"></list-errors>
 
         <form ng-submit="$ctrl.submitForm()">
           <fieldset ng-disabled="$ctrl.isSubmitting">

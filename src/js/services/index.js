@@ -11,16 +11,16 @@ servicesModule.service('User', UserService);
 import JwtService from './jwt.service';
 servicesModule.service('JWT', JwtService);
 
+import TagsService from './tags.service';
+servicesModule.service('Tags', TagsService);
+
+import ArticleService from './article.service';
+servicesModule.service('Article', ArticleService);
+
 // TAG SERVICE
 
 // Article.getFeed({ type: 'user', username: 'eric' })
 // Feed.get({ type: 'user', username: 'eric' })
-/*
-  Why auth in own folder but not article feeds?
-  Auth setters only happen in one place, auth ctrl.
-  Getters happen rarely, and most likely via User svc
-  which will be in global services folder.
-*/
 
 
 export default servicesModule;
