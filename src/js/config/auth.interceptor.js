@@ -1,4 +1,4 @@
-function authInterceptor(JWT, AppConstants, $location, $q) {
+function authInterceptor(JWT, AppConstants, $window, $q) {
   'ngInject';
   let token = JWT.get();
 
@@ -16,8 +16,8 @@ function authInterceptor(JWT, AppConstants, $location, $q) {
       if (rejection.status === 401) {
         // clear any JWT token being stored
         JWT.destroy();
-        // redirect to the homepage
-        $location.path('/');
+        // do a hard page refresh
+        $window.location.reload();
       }
       return $q.reject(rejection);
     }

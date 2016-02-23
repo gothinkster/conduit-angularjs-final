@@ -13,16 +13,22 @@
       <div class="col-md-9">
         <div class="feed-toggle">
           <ul class="nav nav-pills outline-active">
-            <li class="nav-item">
-              <a class="nav-link disabled" href="#">Your Feed</a>
+            <li class="nav-item" show-authed="true">
+              <span class="nav-link"
+                    ng-class="{ active: $ctrl.currentList.type === 'feed' }"
+                    ng-click="$ctrl.changeList({ type: 'feed' })">Your Feed</span>
             </li>
             <li class="nav-item">
-              <a class="nav-link active" href="#">Global Feed</a>
+              <span class="nav-link"
+                    ng-class="{ active: $ctrl.currentList.type === 'all' }"
+                    ng-click="$ctrl.changeList({ type: 'all' })">Global Feed</span>
             </li>
           </ul>
         </div>
 
         <article-preview for="article" ng-repeat="article in $ctrl.articleList"></article-preview>
+
+        <div class="post-preview" ng-hide="$ctrl.articleList">Loading articles...</div>
 
       </div>
 

@@ -1,8 +1,9 @@
 export default class User {
-  constructor(JWT, AppConstants, $state, $http, $q) {
+  constructor(JWT, AppConstants, $window, $state, $http, $q) {
     'ngInject';
 
     this._AppConstants = AppConstants;
+    this._$window = $window;
     this._$state = $state;
     this._$http = $http;
     this._JWT = JWT;
@@ -94,6 +95,8 @@ export default class User {
   logout() {
     this.current = null;
     this._JWT.destroy();
+    // Do a hard page refresh to ensure all data is flushed.
+    this._$window.location.reload();
   }
 
 

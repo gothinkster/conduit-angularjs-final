@@ -3,6 +3,7 @@ class HomeCtrl {
     'ngInject';
 
     this._AppConstants = AppConstants;
+    this._Articles = Articles;
 
     // Get list of all tags
     Tags
@@ -12,12 +13,33 @@ class HomeCtrl {
       );
 
     // Get list of all articles
-    Articles
-      .getAll()
+    // Articles
+    //   .getAll()
+    //   .then(
+    //     (list) => this.articleList = list
+    //   );
+
+    // Populate our list when the controller loads.
+    this.changeList({
+      type: User.current ? 'all' : 'all'
+      // type: User.current ? 'feed' : 'all'
+    });
+
+  }
+
+  changeList(config) {
+    this.currentList = config;
+    this.getArticles();
+  }
+
+  getArticles() {
+    this.articleList = null;
+
+    this._Articles
+      .query(this.currentList)
       .then(
         (list) => this.articleList = list
       );
-
   }
 
 }
