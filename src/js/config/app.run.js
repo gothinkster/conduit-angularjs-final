@@ -1,7 +1,5 @@
-function AppRun(User, AppConstants, $rootScope) {
+function AppRun(AppConstants, $rootScope) {
   'ngInject';
-
-  User.verifyAuth();
 
   // change page title based on state
   $rootScope.$on('$stateChangeSuccess', (event, toState) => {

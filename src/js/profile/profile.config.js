@@ -2,7 +2,7 @@ function ProfileConfig($stateProvider) {
   'ngInject';
 
   $stateProvider
-  .state('profile', {
+  .state('app.profile', {
     url: '/profile',
     controller: 'ProfileCtrl',
     controllerAs: '$ctrl',

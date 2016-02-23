@@ -8,15 +8,9 @@ class AuthCtrl {
     this._$state = $state;
 
     this.title = $state.current.title;
-    this.stateName = $state.current.name;
     this.isSubmitting = false;
+    this.authType = $state.current.name.replace('app.', '');
 
-    // Make it easy to lookup whether we're on login, register, etc.
-    // Particularly useful for ng-show/ng-hide!
-    this.stateIs = {
-      login: this.stateName == 'login',
-      register: this.stateName == 'register'
-    }
 
     this.formData = {};
     this.errors = null;
@@ -29,10 +23,10 @@ class AuthCtrl {
     this.isSubmitting = true;
 
     // if (!this._Auth.isAuthed()) {
-    this._User.attemptAuth(this.stateName, this.formData).then(
+    this._User.attemptAuth(this.authType, this.formData).then(
       // Callback for success
       (res) => {
-        this._$state.go('home');
+        this._$state.go('app.home');
       },
       // Callback for failure
       (err) => {

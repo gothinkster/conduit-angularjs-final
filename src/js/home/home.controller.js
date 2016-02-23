@@ -1,5 +1,5 @@
 class HomeCtrl {
-  constructor(auth, User, Articles, Tags, AppConstants) {
+  constructor(User, Articles, Tags, AppConstants) {
     'ngInject';
 
     this._AppConstants = AppConstants;
@@ -17,9 +17,6 @@ class HomeCtrl {
       .then(
         (list) => this.articleList = list
       );
-
-
-      console.log(auth)
 
   }
 

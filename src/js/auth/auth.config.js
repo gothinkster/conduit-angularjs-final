@@ -1,21 +1,32 @@
 function AuthConfig($stateProvider, $httpProvider) {
   'ngInject';
 
+  // Define the routes
   $stateProvider
 
-  .state('login', {
+  .state('app.login', {
     url: '/login',
     controller: 'AuthCtrl',
     controllerAs: '$ctrl',
     templateUrl: 'auth/auth.html',
-    title: 'Sign in'
+    title: 'Sign in',
+    resolve:{
+      auth: function(User) {
+        return User.ensureAuthIs(false);
+      }
+    }
   })
 
-  .state('register', {
+  .state('app.register', {
     url: '/register',
     controller: 'AuthCtrl as $ctrl',
     templateUrl: 'auth/auth.html',
-    title: 'Sign up'
+    title: 'Sign up',
+    resolve:{
+      auth: function(User) {
+        return User.ensureAuthIs(false);
+      }
+    }
   });
 
 };

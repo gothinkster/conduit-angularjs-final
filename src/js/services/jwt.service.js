@@ -20,7 +20,6 @@ export default class JWT {
   }
 
   save(token) {
-    console.log('saving token ' + token)
     this._$window.localStorage[this._AppConstants.jwtKey] = token;
   }
 
