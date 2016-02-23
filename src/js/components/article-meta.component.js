@@ -7,7 +7,7 @@ class ArticleMetaCtrl {
 
 let ArticleMeta= {
   bindings: {
-    articleData: '='
+    for: '='
   },
   transclude: true,
   controller: ArticleMetaCtrl,

@@ -7,7 +7,7 @@ class ArticlePreviewCtrl {
 
 let ArticlePreview = {
   bindings: {
-    articleData: '='
+    for: '='
   },
   controller: ArticlePreviewCtrl,
   templateUrl: 'components/article-preview.html'

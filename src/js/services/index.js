@@ -14,13 +14,9 @@ servicesModule.service('JWT', JwtService);
 import TagsService from './tags.service';
 servicesModule.service('Tags', TagsService);
 
-import ArticleService from './article.service';
-servicesModule.service('Article', ArticleService);
+import ArticlesService from './articles.service';
+servicesModule.service('Articles', ArticlesService);
 
-// TAG SERVICE
-
-// Article.getFeed({ type: 'user', username: 'eric' })
-// Feed.get({ type: 'user', username: 'eric' })
 
 
 export default servicesModule;

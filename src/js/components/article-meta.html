@@ -1,8 +1,8 @@
 <div class="post-meta">
-  <a ui-sref="profile"><img src="http://i.imgur.com/Qr71crq.jpg" /></a>
+  <a ui-sref="profile"><img src="http://i.imgur.com/Xzm3mI0.jpg" /></a>
   <div class="info">
-    <a ui-sref="profile" class="author">Eric Simons</a>
-    <span class="date">January 20th</span>
+    <a ui-sref="profile" class="author" ng-bind="$ctrl.for.author.username"></a>
+    <span class="date" ng-bind="$ctrl.for.createdAt | date: 'longDate' "></span>
   </div>
   <ng-transclude></ng-transclude>
 </div>

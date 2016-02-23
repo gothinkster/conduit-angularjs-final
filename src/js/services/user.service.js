@@ -59,6 +59,11 @@ export default class User {
         (res) => {
           this.current = res.data.profile;
           deferred.resolve();
+        },
+        // If an error happens, that means the user's token was invalid.
+        (err) => {
+          this._JWT.destroy();
+          deferred.reject();
         }
         // Reject automatically handled by auth interceptor
         // Will boot them to homepage

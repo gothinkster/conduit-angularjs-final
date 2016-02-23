@@ -1,5 +1,5 @@
 class WriterCtrl {
-  constructor(Article, $state) {
+  constructor(Articles, $state) {
     'ngInject';
 
     this.tagField = '';
@@ -31,7 +31,7 @@ class WriterCtrl {
 
       this.isSubmitting = true;
 
-      Article.create(this.article).then(
+      Articles.create(this.article).then(
         (article) => {
           console.log(article)
         },
