@@ -1,7 +1,7 @@
 <div class="post-meta">
-  <a ui-sref="app.profile"><img src="http://i.imgur.com/Xzm3mI0.jpg" /></a>
+  <a ui-sref="app.profile.main({ username:$ctrl.for.author.username })"><img src="http://i.imgur.com/Xzm3mI0.jpg" /></a>
   <div class="info">
-    <a ui-sref="app.profile" class="author" ng-bind="$ctrl.for.author.username"></a>
+    <a ui-sref="app.profile.main({ username:$ctrl.for.author.username })" class="author" ng-bind="$ctrl.for.author.username"></a>
     <span class="date" ng-bind="$ctrl.for.createdAt | date: 'longDate' "></span>
   </div>
   <ng-transclude></ng-transclude>

@@ -1,7 +1,9 @@
 class ProfileCtrl {
-  constructor($rootScope) {
+  constructor(profile, $state, $rootScope) {
     'ngInject';
-    this.number = 1234;
+
+    // The profile for this page, resolved by UI Router
+    this.profile = profile;
 
   }
 }

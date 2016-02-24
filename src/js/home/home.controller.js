@@ -14,7 +14,7 @@ class HomeCtrl {
 
     // Populate our list when the controller loads.
     this.changeList({
-      type: User.current ? 'all' : 'all'
+      type: User.current ? 'feed' : 'all'
       // type: User.current ? 'feed' : 'all'
     });
 
@@ -26,12 +26,16 @@ class HomeCtrl {
   }
 
   getArticles() {
-    this.articleList = null;
+    this.articleList = [];
+    this.loadingArticles = true;
 
     this._Articles
       .query(this.currentList)
       .then(
-        (list) => this.articleList = list
+        (list) => {
+          this.loadingArticles = false;
+          this.articleList = list
+        }
       );
   }
 

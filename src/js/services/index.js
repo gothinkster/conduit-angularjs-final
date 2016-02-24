@@ -20,6 +20,9 @@ servicesModule.service('Articles', ArticlesService);
 import CommentsService from './comments.service';
 servicesModule.service('Comments', CommentsService);
 
+import ProfileService from './profile.service';
+servicesModule.service('Profile', ProfileService);
+
 
 
 export default servicesModule;

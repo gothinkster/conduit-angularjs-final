@@ -11,10 +11,8 @@
 
         <div class="col-xs-12 col-md-10 offset-md-1">
           <img src="http://i.imgur.com/Xzm3mI0.jpg" class="user-img" />
-          <h4>Eric Simons</h4>
-          <p>
-            Cofounder @GoThinkster, lived in Aol's HQ for a few months, kinda looks like Peeta from the Hunger Games
-          </p>
+          <h4 ng-bind="::$ctrl.profile.username"></h4>
+          <p ng-bind="::$ctrl.profile.bio"></p>
           <follow-btn></follow-btn>
         </div>
 
@@ -29,33 +27,15 @@
         <div class="posts-toggle">
           <ul class="nav nav-pills outline-active">
             <li class="nav-item">
-              <a class="nav-link active" href="#">My Posts</a>
+              <a class="nav-link" ui-sref-active="active" ui-sref="app.profile.main({username: $ctrl.profile.username})">My Articles</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="#">Favorited Posts</a>
+              <a class="nav-link" ui-sref-active="active" ui-sref="app.profile.favorites({username: $ctrl.profile.username})">Favorited Articles</a>
             </li>
           </ul>
         </div>
 
-        <article-preview></article-preview>
-
-        <div class="post-preview">
-          <div class="post-meta">
-            <a href="profile.html"><img src="http://i.imgur.com/Xzm3mI0.jpg" /></a>
-            <div class="info">
-              <a href="profile.html" class="author">Albert Pai</a>
-              <span class="date">January 20th</span>
-            </div>
-            <button class="btn btn-outline-primary btn-sm pull-xs-right">
-              <i class="ion-heart"></i> 32
-            </button>
-          </div>
-          <a href="post.html" class="preview-link">
-            <h1>The song you won't ever stop singing. No matter how hard you try.</h1>
-            <p>In my demo, the holy grail layout is nested inside a document, so there's no body or main tags like shown above. Regardless, we're interested in the class names and the appearance of sections in the markup as opposed to the actual elements themselves. In particular, take note of the modifier classes used on the two sidebars, and the trivial order in which they appear in the markup. Let's break this down to paint a clear picture of what's happening...</p>
-            <span>Read more...</span>
-          </a>
-        </div>
+        <div ui-view></div>
 
 
       </div>
