@@ -1,8 +1,14 @@
 class CommentCtrl {
   constructor(User) {
     'ngInject';
+
+
     // The user can only edit/delete this comment if they are the author
-    this.canModify = (User.current.username === this.data.author.username);
+    if (User.current) {
+      this.canModify = (User.current.username === this.data.author.username);
+    } else {
+      this.canModify = false;
+    }
 
   }
 }

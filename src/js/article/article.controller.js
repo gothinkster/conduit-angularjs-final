@@ -33,7 +33,7 @@ class ArticleCtrl {
 
     this._Comments.add(this.article.slug, this.commentForm.body).then(
       (comment) => {
-        this.comments.push(comment);
+        this.comments.unshift(comment);
         this.resetCommentForm();
       },
       (err) => {

@@ -1,12 +1,11 @@
 function authInterceptor(JWT, AppConstants, $window, $q) {
   'ngInject';
-  let token = JWT.get();
 
   return {
     // automatically attach Authorization header
     request: function(config) {
-      if(config.url.indexOf(AppConstants.api) === 0 && token) {
-        config.headers.Authorization = 'Token ' + token;
+      if(config.url.indexOf(AppConstants.api) === 0 && JWT.get()) {
+        config.headers.Authorization = 'Token ' + JWT.get();
       }
       return config;
     },

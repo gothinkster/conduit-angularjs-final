@@ -1,10 +1,7 @@
 <ul class="error-messages" ng-show="$ctrl.from">
-  <li ng-repeat="(field, errors) in $ctrl.from">
-    Your {{field}}
-    <ul>
-      <li ng-repeat="error in errors">
-        {{error}}
-      </li>
-    </ul>
-  </li>
+  <div ng-repeat="(field, errors) in $ctrl.from">
+    <li ng-repeat="error in errors">
+      {{field}} {{error}}
+    </li>
+  </div>
 </ul>
