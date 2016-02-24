@@ -95,8 +95,8 @@ export default class User {
   logout() {
     this.current = null;
     this._JWT.destroy();
-    // Do a hard page refresh to ensure all data is flushed.
-    this._$window.location.reload();
+    // Do a hard reload of current state to ensure all data is flushed
+    this._$state.go(this._$state.$current, null, { reload: true });
   }
 
 

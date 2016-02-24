@@ -13,7 +13,7 @@ import './components';
 import './home';
 import './profile';
 import './article';
-import './writer';
+import './editor';
 import './auth';
 import './services';
 import './settings';
@@ -28,7 +28,7 @@ const requires = [
   'app.home',
   'app.profile',
   'app.article',
-  'app.writer',
+  'app.editor',
   'app.auth',
   'app.services',
   'app.settings'

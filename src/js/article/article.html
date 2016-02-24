@@ -6,12 +6,7 @@
 
       <h1 ng-bind="::$ctrl.article.title"></h1>
 
-      <article-meta for="$ctrl.article">
-        <follow-btn author-data="$ctrl.article.author"></follow-btn>
-        <favorite-btn article-id="$ctrl.article.id">
-          Favorite Post <span class="counter">(29)</span>
-        </favorite-btn>
-      </article-meta>
+      <article-actions for="$ctrl.article"></article-actions>
 
     </div>
   </div>
@@ -27,30 +22,30 @@
     <hr />
 
     <div class="post-actions">
-      <article-meta for="$ctrl.article">
-        <follow-btn author-data="$ctrl.article.author"></follow-btn>
-        <favorite-btn article-id="$ctrl.article.id">
-          Favorite Post <span class="counter">(29)</span>
-        </favorite-btn>
-      </article-meta>
+      <article-actions for="$ctrl.article"></article-actions>
     </div>
 
     <div class="row">
       <div class="col-xs-12 col-md-8 offset-md-2">
 
-        <list-errors from="$ctrl.commentForm.errors"></list-errors>
+        <div show-authed="true">
+          <list-errors from="$ctrl.commentForm.errors"></list-errors>
+          <form class="card comment-form" ng-submit="$ctrl.addComment()">
+            <div class="card-block">
+              <textarea class="form-control" placeholder="Write a comment..." rows="3" ng-model="$ctrl.commentForm.body"></textarea>
+            </div>
+            <div class="card-footer">
+              <img src="http://i.imgur.com/Qr71crq.jpg" class="comment-author-img" />
+              <button class="btn btn-sm btn-primary" type="submit">
+               Post Comment
+              </button>
+            </div>
+          </form>
+        </div>
 
-        <form class="card comment-form" ng-submit="$ctrl.addComment()">
-          <div class="card-block">
-            <textarea class="form-control" placeholder="Write a comment..." rows="3" ng-model="$ctrl.commentForm.body"></textarea>
-          </div>
-          <div class="card-footer">
-            <img src="http://i.imgur.com/Qr71crq.jpg" class="comment-author-img" />
-            <button class="btn btn-sm btn-primary" type="submit">
-             Post Comment
-            </button>
-          </div>
-        </form>
+        <p show-authed="false">
+          <a ui-sref="app.login">Sign in</a> or <a ui-sref="app.register">sign up</a> to add comments on this article.
+        </p>
 
         <comment ng-repeat="cmt in $ctrl.comments" data="cmt"></comment>
 

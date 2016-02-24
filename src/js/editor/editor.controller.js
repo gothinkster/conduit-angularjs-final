@@ -1,15 +1,21 @@
-class WriterCtrl {
-  constructor(Articles, $state) {
+class EditorCtrl {
+  constructor(Articles, article, $state) {
     'ngInject';
+
+    this._$state = $state;
 
     this.tagField = '';
     this.isSubmitting = false;
 
-    this.article = {
-      title: '',
-      description: '',
-      body: '',
-      tagList: []
+    if (!article) {
+      this.article = {
+        title: '',
+        description: '',
+        body: '',
+        tagList: []
+      }
+    } else {
+      this.article = article;
     }
 
     this.addTag = () => {
@@ -26,14 +32,12 @@ class WriterCtrl {
       }
     }
 
-    this.save = () => {
-      console.log(this.article);
-
+    this.submit = () => {
       this.isSubmitting = true;
 
-      Articles.create(this.article).then(
-        (article) => {
-          console.log(article)
+      Articles.save(this.article).then(
+        (newArticle) => {
+          this._$state.go('app.article', { slug: newArticle.slug });
         },
         (err) => {
           this.isSubmitting = false;
@@ -47,4 +51,4 @@ class WriterCtrl {
 }
 
 
-export default WriterCtrl;
+export default EditorCtrl;

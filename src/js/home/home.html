@@ -14,17 +14,17 @@
         <div class="feed-toggle">
           <ul class="nav nav-pills outline-active">
             <li class="nav-item" show-authed="true">
-              <a href="#" class="nav-link"
+              <a href="" class="nav-link"
                     ng-class="{ active: $ctrl.currentList.type === 'feed' }"
                     ng-click="$ctrl.changeList({ type: 'feed' })">Your Feed</a>
             </li>
             <li class="nav-item">
-              <a href="#" class="nav-link"
+              <a href="" class="nav-link"
                     ng-class="{ active: $ctrl.currentList.type === 'all' && !$ctrl.currentList.filters }"
                     ng-click="$ctrl.changeList({ type: 'all' })">Global Feed</a>
             </li>
             <li class="nav-item" ng-show="$ctrl.currentList.filters.tag">
-              <a href="#" class="nav-link active"><i class="ion-pound"></i> {{$ctrl.currentList.filters.tag}}</a>
+              <a href="" class="nav-link active"><i class="ion-pound"></i> {{$ctrl.currentList.filters.tag}}</a>
             </li>
           </ul>
         </div>
@@ -40,7 +40,7 @@
           <p>Popular Tags</p>
 
           <div class="tag-list" ng-show="$ctrl.tags">
-            <a href="#" class="label label-pill label-default"
+            <a href="" class="label label-pill label-default"
                ng-click="$ctrl.changeList({ type: 'all', filters: { tag: tagName } })"
                ng-repeat="tagName in $ctrl.tags"
                ng-bind="tagName"></a>
