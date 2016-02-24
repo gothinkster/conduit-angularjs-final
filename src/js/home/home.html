@@ -46,9 +46,8 @@
                ng-repeat="tagName in $ctrl.tags"
                ng-bind="tagName"></a>
           </div>
-          <div ng-hide="$ctrl.tags">
-            Loading...
-          </div>
+          <div ng-hide="!$ctrl.loadingTags">Loading tags...</div>
+          <div class="post-preview" ng-show="!$ctrl.loadingTags && !$ctrl.tags.length">No tags are here... yet.</div>
         </div>
       </div>
 

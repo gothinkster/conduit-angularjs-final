@@ -6,10 +6,14 @@ class HomeCtrl {
     this._Articles = Articles;
 
     // Get list of all tags
+    this.loadingTags = true;
     Tags
       .getAll()
       .then(
-        (tags) => this.tags = tags
+        (tags) => {
+          this.loadingTags = false;
+          this.tags = tags
+        }
       );
 
     // Populate our list when the controller loads.
