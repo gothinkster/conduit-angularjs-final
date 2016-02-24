@@ -1,6 +1,9 @@
 class ArticleActionsCtrl {
-  constructor(User) {
+  constructor(Articles, User, $state) {
     'ngInject';
+
+    this._Articles = Articles;
+    this._$state = $state;
 
     // The user can only edit/delete this comment if they are the author
     if (User.current) {
@@ -8,6 +11,15 @@ class ArticleActionsCtrl {
     } else {
       this.canModify = false;
     }
+
+  }
+
+  deleteArticle() {
+    this.isDeleting = true;
+    this._Articles.destroy(this.for.slug).then(
+      (success) => this._$state.go('app.home'),
+      (err) => this._$state.go('app.home')
+    );
 
   }
 }

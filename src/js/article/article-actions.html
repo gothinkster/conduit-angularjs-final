@@ -5,7 +5,7 @@
     <a ui-sref="app.editor({ slug: $ctrl.for.slug })" class="btn btn-outline-secondary btn-sm">
       <i class="ion-edit"></i> Edit Article
     </a>
-    <button class="btn btn-outline-danger btn-sm">
+    <button class="btn btn-outline-danger btn-sm" ng-class="{disabled: $ctrl.isDeleting}" ng-click="$ctrl.deleteArticle()">
       <i class="ion-trash-a"></i> Delete Article
     </button>
   </span>
