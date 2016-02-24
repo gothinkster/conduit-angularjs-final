@@ -1,6 +1,6 @@
 <div class="post-preview">
   <article-meta for="$ctrl.for">
-    <favorite-btn article-id="$ctrl.for.id" class="pull-xs-right">29</fav-btn>
+    <favorite-btn for="$ctrl.for" class="pull-xs-right">{{$ctrl.for.favoritesCount}}</favorite-btn>
   </article-meta>
 
   <a ui-sref="app.article({ slug: $ctrl.for.slug })" class="preview-link">

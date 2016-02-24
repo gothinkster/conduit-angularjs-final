@@ -8,6 +8,22 @@ export default class Articles {
 
   }
 
+  // Favorite an article
+  favorite(slug) {
+    return this._$http({
+      url: this._AppConstants.api + '/articles/' + slug + '/favorite',
+      method: 'POST'
+    });
+  }
+
+  // Unfavorite an article
+  unfavorite(slug) {
+    return this._$http({
+      url: this._AppConstants.api + '/articles/' + slug + '/favorite',
+      method: 'DELETE'
+    });
+  }
+
   // Creates or updates an article
   save(article) {
 

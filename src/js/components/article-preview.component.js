@@ -1,7 +1,7 @@
 class ArticlePreviewCtrl {
   constructor() {
     'ngInject';
-    this.test = "Jacob!"
+
   }
 }
 

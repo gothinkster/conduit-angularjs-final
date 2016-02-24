@@ -1,5 +1,5 @@
-<button class="btn btn-sm btn-outline-secondary action-btn" ng-click="$ctrl.test()">
+<button class="btn btn-sm action-btn" ng-class="{'disabled': $ctrl.isSubmitting, 'btn-outline-secondary': !$ctrl.for.following, 'btn-secondary': $ctrl.for.following}" ng-click="$ctrl.submit()">
   <i class="ion-plus-round"></i>
   &nbsp;
-  Follow Eric Simons <span class="counter">(10)</span>
+  {{ $ctrl.for.following ? 'Unfollow' : 'Follow' }} {{ $ctrl.for.username }}
 </button>

@@ -5,14 +5,16 @@
       <div class="col-md-6 offset-md-3 col-xs-12">
         <h1 class="text-xs-center">Your Settings</h1>
 
+        <list-errors from="$ctrl.errors"></list-errors>
+
         <form ng-submit="$ctrl.submitForm()">
           <fieldset ng-disabled="$ctrl.isSubmitting">
             <fieldset class="form-group">
-              <input class="form-control" type="text" placeholder="URL of profile picture" ng-model="$ctrl.formData.picURL">
+              <input class="form-control" type="text" placeholder="URL of profile picture" ng-model="$ctrl.formData.image">
   <!--             <input type="file" id="file"> -->
             </fieldset>
             <fieldset class="form-group">
-              <input class="form-control form-control-lg" type="text" placeholder="Your Name" ng-model="$ctrl.formData.name">
+              <input class="form-control form-control-lg" type="text" placeholder="Username" ng-model="$ctrl.formData.username">
             </fieldset>
             <fieldset class="form-group">
               <textarea class="form-control form-control-lg" rows="8" placeholder="Short bio about you" ng-model="$ctrl.formData.bio"></textarea>
@@ -28,6 +30,8 @@
             </button>
           </fieldset>
         </form>
+
+        <button class="btn btn-outline-secondary" ng-click="$ctrl._User.logout()">Or click here to logout.</button>
       </div>
 
     </div>

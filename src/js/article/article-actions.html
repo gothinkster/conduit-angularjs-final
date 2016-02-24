@@ -12,9 +12,9 @@
 
   <!-- Otherwise, show favorite & follow buttons -->
   <span ng-hide="$ctrl.canModify">
-    <follow-btn author-data="$ctrl.for.author"></follow-btn>
-    <favorite-btn article-id="$ctrl.for.id">
-      Favorite Post <span class="counter">(29)</span>
+    <follow-btn for="$ctrl.for.author"></follow-btn>
+    <favorite-btn for="$ctrl.for">
+      {{ $ctrl.for.favorited ? 'Unfavorite' : 'Favorite' }} Article <span class="counter">({{$ctrl.for.favoritesCount}})</span>
     </favorite-btn>
   </span>
 
