@@ -47,7 +47,7 @@
           <a ui-sref="app.login">Sign in</a> or <a ui-sref="app.register">sign up</a> to add comments on this article.
         </p>
 
-        <comment ng-repeat="cmt in $ctrl.comments" data="cmt"></comment>
+        <comment ng-repeat="cmt in $ctrl.comments" data="cmt" delete-cb="$ctrl.deleteComment(cmt.id, $index)"></comment>
 
       </div>
     </div>
