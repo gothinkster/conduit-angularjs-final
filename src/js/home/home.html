@@ -14,14 +14,17 @@
         <div class="feed-toggle">
           <ul class="nav nav-pills outline-active">
             <li class="nav-item" show-authed="true">
-              <span class="nav-link"
+              <a href="#" class="nav-link"
                     ng-class="{ active: $ctrl.currentList.type === 'feed' }"
-                    ng-click="$ctrl.changeList({ type: 'feed' })">Your Feed</span>
+                    ng-click="$ctrl.changeList({ type: 'feed' })">Your Feed</a>
             </li>
             <li class="nav-item">
-              <span class="nav-link"
-                    ng-class="{ active: $ctrl.currentList.type === 'all' }"
-                    ng-click="$ctrl.changeList({ type: 'all' })">Global Feed</span>
+              <a href="#" class="nav-link"
+                    ng-class="{ active: $ctrl.currentList.type === 'all' && !$ctrl.currentList.filters }"
+                    ng-click="$ctrl.changeList({ type: 'all' })">Global Feed</a>
+            </li>
+            <li class="nav-item" ng-show="$ctrl.currentList.filters.tag">
+              <a href="#" class="nav-link active"><i class="ion-pound"></i> {{$ctrl.currentList.filters.tag}}</a>
             </li>
           </ul>
         </div>
@@ -37,14 +40,10 @@
           <p>Popular Tags</p>
 
           <div class="tag-list" ng-show="$ctrl.tags">
-            <a href="#" class="label label-pill label-default">programming</a>
-            <a href="#" class="label label-pill label-default">javascript</a>
-            <a href="#" class="label label-pill label-default">angularjs</a>
-            <a href="#" class="label label-pill label-default">react</a>
-            <a href="#" class="label label-pill label-default">mean</a>
-            <a href="#" class="label label-pill label-default">node</a>
-            <a href="#" class="label label-pill label-default">rails</a>
-            {{$ctrl.tags}}
+            <a href="#" class="label label-pill label-default"
+               ng-click="$ctrl.changeList({ type: 'all', filters: { tag: tagName } })"
+               ng-repeat="tagName in $ctrl.tags"
+               ng-bind="tagName"></a>
           </div>
           <div ng-hide="$ctrl.tags">
             Loading...

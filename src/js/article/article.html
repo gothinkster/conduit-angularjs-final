@@ -16,6 +16,8 @@
     </div>
   </div>
 
+
+
   <div class="container page">
 
     <div class="row post-content">
@@ -36,24 +38,25 @@
     <div class="row">
       <div class="col-xs-12 col-md-8 offset-md-2">
 
-        <comment is-author="false"></comment>
-        <comment is-author="true"></comment>
-
-        <form class="card comment-form">
+        <form class="card comment-form" ng-submit="$ctrl.addComment()">
           <div class="card-block">
-            <textarea class="form-control" placeholder="Write a comment..." rows="3"></textarea>
+            <textarea class="form-control" placeholder="Write a comment..." rows="3" ng-model="$ctrl.commentForm.body"></textarea>
           </div>
           <div class="card-footer">
             <img src="http://i.imgur.com/Qr71crq.jpg" class="comment-author-img" />
-            <button class="btn btn-sm btn-primary">
+            <button class="btn btn-sm btn-primary" type="submit">
              Post Comment
             </button>
           </div>
         </form>
 
+        <comment ng-repeat="cmt in $ctrl.comments" data="cmt"></comment>
+
       </div>
     </div>
 
   </div>
+
+
 
 </div>

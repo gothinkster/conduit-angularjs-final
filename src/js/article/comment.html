@@ -1,15 +1,15 @@
 <div class="card">
   <div class="card-block">
-    <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
+    <p class="card-text" ng-bind="::$ctrl.data.body"></p>
   </div>
   <div class="card-footer">
     <a href="profile.html" class="comment-author">
       <img src="http://i.imgur.com/Qr71crq.jpg" class="comment-author-img" />
     </a>
     &nbsp;
-    <a ui-sref="app.rofile" class="comment-author">Jacob Schmidt</a>
-    <span class="date-posted">Dec 29th</span>
-    <span class="mod-options" ng-show="$ctrl.isAuthor">
+    <a ui-sref="app.profile" class="comment-author" ng-bind="::$ctrl.data.author.username"></a>
+    <span class="date-posted" ng-bind="::$ctrl.data.createdAt | date: 'longDate' "></span>
+    <span class="mod-options" ng-show="$ctrl.canModify">
       <i class="ion-edit"></i>
       <i class="ion-trash-a"></i>
     </span>

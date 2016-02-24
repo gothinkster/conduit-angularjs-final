@@ -12,13 +12,6 @@ class HomeCtrl {
         (tags) => this.tags = tags
       );
 
-    // Get list of all articles
-    // Articles
-    //   .getAll()
-    //   .then(
-    //     (list) => this.articleList = list
-    //   );
-
     // Populate our list when the controller loads.
     this.changeList({
       type: User.current ? 'all' : 'all'

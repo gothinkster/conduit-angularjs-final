@@ -54,11 +54,11 @@ export default class User {
     // If server doesn't 401, set current user & resolve promise.
     } else {
       this._$http({
-        url: this._AppConstants.api + '/profiles/eric',
+        url: this._AppConstants.api + '/user',
         method: 'GET',
       }).then(
         (res) => {
-          this.current = res.data.profile;
+          this.current = res.data.user;
           deferred.resolve(true);
         },
         // If an error happens, that means the user's token was invalid.

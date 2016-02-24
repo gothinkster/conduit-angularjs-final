@@ -13,7 +13,7 @@ export default class Articles {
     return this._$http({
       url: this._AppConstants.api + '/articles',
       method: 'POST',
-      data: payload
+      data: { article: payload },
     }).then((res) => res.data.article);
 
   }
@@ -24,24 +24,6 @@ export default class Articles {
       url: this._AppConstants.api + '/articles/' + slug,
       method: 'GET'
     }).then((res) => res.data.article);
-  }
-
-
-  // Get lists of articles
-  getAll() {
-    return this.query({ type:'all' });
-  }
-
-  getFeed() {
-    return this.query({ type:'feed' });
-  }
-
-  getByAuthor(username) {
-    return this.query({ type:'all', filters: { author: username } });
-  }
-
-  getByTag(slug) {
-    return this.query({ type:'all', filters: { tag: slug } });
   }
 
   /*

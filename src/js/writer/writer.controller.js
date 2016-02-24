@@ -9,20 +9,20 @@ class WriterCtrl {
       title: '',
       description: '',
       body: '',
-      tag_list: []
+      tagList: []
     }
 
     this.addTag = () => {
       // array includes method
-      if (!this.article.tag_list.includes(this.tagField) && !this.isSubmitting) {
-        this.article.tag_list.push(this.tagField);
+      if (!this.article.tagList.includes(this.tagField) && !this.isSubmitting) {
+        this.article.tagList.push(this.tagField);
         this.tagField = '';
       }
     }
 
     this.removeTag = (tagName) => {
       if (!this.isSubmitting) {
-        this.article.tag_list = this.article.tag_list.filter((slug) => slug != tagName);
+        this.article.tagList = this.article.tagList.filter((slug) => slug != tagName);
       }
     }
 

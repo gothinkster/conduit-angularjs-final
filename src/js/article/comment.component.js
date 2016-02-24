@@ -1,13 +1,15 @@
 class CommentCtrl {
-  constructor() {
+  constructor(User) {
     'ngInject';
-    // this.appName = AppConstants.appName;
+    // The user can only edit/delete this comment if they are the author
+    this.canModify = (User.current.username === this.data.author.username);
+
   }
 }
 
 let Comment = {
   bindings: {
-    isAuthor: '='
+    data: '='
   },
   controller: CommentCtrl,
   templateUrl: 'article/comment.html'
