@@ -11,7 +11,7 @@ let ArticleMeta= {
   },
   transclude: true,
   controller: ArticleMetaCtrl,
-  templateUrl: 'components/article-meta.html'
+  templateUrl: 'components/article-helpers/article-meta.html'
 };
 
 export default ArticleMeta;

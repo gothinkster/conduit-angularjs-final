@@ -16,17 +16,31 @@ class HomeCtrl {
         }
       );
 
+
+    this.articleLimit = 1;
+
+    // Initialize an empty object to start
+    this.currentList = {};
+
     // Populate our list when the controller loads.
     this.changeList({
-      type: User.current ? 'feed' : 'all'
-      // type: User.current ? 'feed' : 'all'
+      type: User.current ? 'feed' : 'all',
+      limit: this.articleLimit,
+      offset: 0
     });
 
   }
 
   changeList(config) {
-    this.currentList = config;
+    Object.assign(this.currentList, config);
     this.getArticles();
+  }
+
+  changePage(toNum) {
+    // Helper method
+    this.changeList({
+      offset: toNum * this.articleLimit
+    })
   }
 
   getArticles() {

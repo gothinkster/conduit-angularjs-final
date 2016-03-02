@@ -45,7 +45,7 @@ let FollowBtn= {
     for: '='
   },
   controller: FollowBtnCtrl,
-  templateUrl: 'components/follow-btn.html'
+  templateUrl: 'components/buttons/follow-btn.html'
 };
 
 export default FollowBtn;

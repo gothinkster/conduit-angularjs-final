@@ -10,7 +10,7 @@ let ArticlePreview = {
     for: '='
   },
   controller: ArticlePreviewCtrl,
-  templateUrl: 'components/article-preview.html'
+  templateUrl: 'components/article-helpers/article-preview.html'
 };
 
 export default ArticlePreview;

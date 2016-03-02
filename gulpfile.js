@@ -67,7 +67,11 @@ gulp.task('views', function() {
 
 gulp.task('default',function() {
   browserSync.init(['./build/**/**.**'], {
-    server: "./build"
+    server: "./build",
+    port: 4000,
+    ui: {
+      port: 4001
+    }
   });
 
   gulp.start(['sass', 'html', 'views', 'browserify']);

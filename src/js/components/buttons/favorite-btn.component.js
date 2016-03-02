@@ -49,7 +49,7 @@ let FavoriteBtn= {
   },
   transclude: true,
   controller: FavoriteBtnCtrl,
-  templateUrl: 'components/favorite-btn.html'
+  templateUrl: 'components/buttons/favorite-btn.html'
 };
 
 export default FavoriteBtn;

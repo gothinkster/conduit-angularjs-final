@@ -29,7 +29,7 @@ export default class User {
 
   // Try to authenticate by registering or logging in
   attemptAuth(type, credentials) {
-    let route = (type === 'login') ? '/sign_in' : '';
+    let route = (type === 'login') ? '/login' : '';
     return this._$http({
       url: this._AppConstants.api + '/users' + route,
       method: 'POST',
