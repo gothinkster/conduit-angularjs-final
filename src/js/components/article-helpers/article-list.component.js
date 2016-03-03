@@ -67,7 +67,7 @@ class ArticleListCtrl {
           // Update list and total pages
           this.list = res.articles;
 
-          this.listConfig.totalPages = res.articlesCount / this.limit;
+          this.listConfig.totalPages = Math.ceil(res.articlesCount / this.limit);
         }
       );
   }
