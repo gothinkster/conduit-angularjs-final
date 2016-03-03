@@ -80,16 +80,14 @@ export default class Articles {
     }
   */
   query(config) {
-    // Feed has it's own endpoint, whereas all others route from /articles.
-    let endpoint = (config.type === 'feed') ? '/feed' : '/articles';
 
     // Create the $http object for this request
     let request = {
-      url: this._AppConstants.api + endpoint,
+      url: this._AppConstants.api + '/articles' + ((config.type === 'feed') ? '/feed' : ''),
       method: 'GET',
       params: config.filters ? config.filters : null
     };
-    return this._$http(request).then((res) => res.data.articles);
+    return this._$http(request).then((res) => res.data);
   }
 
 

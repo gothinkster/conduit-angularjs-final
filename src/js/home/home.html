@@ -15,24 +15,21 @@
           <ul class="nav nav-pills outline-active">
             <li class="nav-item" show-authed="true">
               <a href="" class="nav-link"
-                    ng-class="{ active: $ctrl.currentList.type === 'feed' }"
+                    ng-class="{ active: $ctrl.listConfig.type === 'feed' }"
                     ng-click="$ctrl.changeList({ type: 'feed' })">Your Feed</a>
             </li>
             <li class="nav-item">
               <a href="" class="nav-link"
-                    ng-class="{ active: $ctrl.currentList.type === 'all' && !$ctrl.currentList.filters }"
+                    ng-class="{ active: $ctrl.listConfig.type === 'all' && !$ctrl.listConfig.filters }"
                     ng-click="$ctrl.changeList({ type: 'all' })">Global Feed</a>
             </li>
-            <li class="nav-item" ng-show="$ctrl.currentList.filters.tag">
-              <a href="" class="nav-link active"><i class="ion-pound"></i> {{$ctrl.currentList.filters.tag}}</a>
+            <li class="nav-item" ng-show="$ctrl.listConfig.filters.tag">
+              <a href="" class="nav-link active"><i class="ion-pound"></i> {{$ctrl.listConfig.filters.tag}}</a>
             </li>
           </ul>
         </div>
 
-        <article-preview for="article" ng-repeat="article in $ctrl.articleList"></article-preview>
-
-        <div class="post-preview" ng-hide="!$ctrl.loadingArticles">Loading articles...</div>
-        <div class="post-preview" ng-show="!$ctrl.loadingArticles && !$ctrl.articleList.length">No articles are here... yet.</div>
+        <article-list limit="10" list-config="$ctrl.listConfig"></article-list>
 
       </div>
 

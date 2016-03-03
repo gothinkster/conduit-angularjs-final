@@ -7,25 +7,16 @@ class ProfileArticlesCtrl {
 
     this.profileState = $state.current.name.replace('app.profile.', '');
 
+    // Both favorites and author articles require the 'all' type
+    this.listConfig = { type: 'all' };
+
     // `main` state's filter should be by author
     if (this.profileState === 'main') {
-      this.filter = {author: this.profile.username};
+      this.listConfig.filters = {author: this.profile.username};
 
     } else if (this.profileState === 'favorites') {
-      this.filter = {favorited: this.profile.username};
+      this.listConfig.filters = {favorited: this.profile.username};
     }
-
-
-    this.loadingArticles = true;
-    Articles.query({ type: 'all', filters: this.filter }).then(
-      (articles) => {
-        this.loadingArticles = false;
-        this.articleList = articles;
-      },
-      (err) => {
-        this.loadingArticles = false;
-      }
-    );
 
 
   }

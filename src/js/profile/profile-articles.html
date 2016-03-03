@@ -1,5 +1,1 @@
-<article-preview for="article" ng-repeat="article in $ctrl.articleList"></article-preview>
-
-<div class="post-preview" ng-hide="!$ctrl.loadingArticles">Loading articles...</div>
-
-<div class="post-preview" ng-show="!$ctrl.loadingArticles && !$ctrl.articleList.length">No articles are here... yet.</div>
+<article-list limit="5" list-config="$ctrl.listConfig"></article-list>
