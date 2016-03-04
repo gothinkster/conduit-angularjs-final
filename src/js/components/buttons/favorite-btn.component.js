@@ -17,24 +17,23 @@ class FavoriteBtnCtrl {
       return;
     }
 
-    //this.for.favorited;
     // If fav'd already, unfavorite it
-    if (this.for.favorited) {
-      this._Articles.unfavorite(this.for.slug).then(
+    if (this.article.favorited) {
+      this._Articles.unfavorite(this.article.slug).then(
         () => {
           this.isSubmitting = false;
-          this.for.favorited = false;
-          this.for.favoritesCount--;
+          this.article.favorited = false;
+          this.article.favoritesCount--;
         }
       )
 
     // Otherwise, favorite it
     } else {
-      this._Articles.favorite(this.for.slug).then(
+      this._Articles.favorite(this.article.slug).then(
         () => {
           this.isSubmitting = false;
-          this.for.favorited = true;
-          this.for.favoritesCount++;
+          this.article.favorited = true;
+          this.article.favoritesCount++;
         }
       )
     }
@@ -45,7 +44,7 @@ class FavoriteBtnCtrl {
 
 let FavoriteBtn= {
   bindings: {
-    for: '='
+    article: '='
   },
   transclude: true,
   controller: FavoriteBtnCtrl,

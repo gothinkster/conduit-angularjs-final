@@ -1,7 +1,10 @@
 class AppFooterCtrl {
   constructor(AppConstants) {
     'ngInject';
-    this._AppConstants = AppConstants;
+    this.appName = AppConstants.appName;
+
+    // Get today's date to generate the year
+    this.date = new Date();
   }
 }
 

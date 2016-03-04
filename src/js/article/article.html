@@ -6,7 +6,7 @@
 
       <h1 ng-bind="::$ctrl.article.title"></h1>
 
-      <article-actions for="$ctrl.article"></article-actions>
+      <article-actions article="$ctrl.article"></article-actions>
 
     </div>
   </div>
@@ -22,7 +22,7 @@
     <hr />
 
     <div class="post-actions">
-      <article-actions for="$ctrl.article"></article-actions>
+      <article-actions article="$ctrl.article"></article-actions>
     </div>
 
     <div class="row">
@@ -35,7 +35,7 @@
               <textarea class="form-control" placeholder="Write a comment..." rows="3" ng-model="$ctrl.commentForm.body"></textarea>
             </div>
             <div class="card-footer">
-              <img src="http://i.imgur.com/Qr71crq.jpg" class="comment-author-img" />
+              <img ng-src="{{::$ctrl.currentUser.image}}" class="comment-author-img" />
               <button class="btn btn-sm btn-primary" type="submit">
                Post Comment
               </button>

@@ -16,22 +16,21 @@ class FollowBtnCtrl {
       return;
     }
 
-    //this.for.favorited;
-    // If fav'd already, unfavorite it
-    if (this.for.following) {
-      this._Profile.unfollow(this.for.username).then(
+    // If following already, unfollow
+    if (this.user.following) {
+      this._Profile.unfollow(this.user.username).then(
         () => {
           this.isSubmitting = false;
-          this.for.following = false;
+          this.user.following = false;
         }
       )
 
-    // Otherwise, favorite it
+    // Otherwise, follow them
     } else {
-      this._Profile.follow(this.for.username).then(
+      this._Profile.follow(this.user.username).then(
         () => {
           this.isSubmitting = false;
-          this.for.following = true;
+          this.user.following = true;
         }
       )
     }
@@ -42,7 +41,7 @@ class FollowBtnCtrl {
 
 let FollowBtn= {
   bindings: {
-    for: '='
+    user: '='
   },
   controller: FollowBtnCtrl,
   templateUrl: 'components/buttons/follow-btn.html'

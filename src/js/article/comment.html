@@ -4,7 +4,7 @@
   </div>
   <div class="card-footer">
     <a href="profile.html" class="comment-author">
-      <img src="http://i.imgur.com/Qr71crq.jpg" class="comment-author-img" />
+      <img ng-src="{{::$ctrl.data.author.image}}" class="comment-author-img" />
     </a>
     &nbsp;
     <a ui-sref="app.profile" class="comment-author" ng-bind="::$ctrl.data.author.username"></a>

@@ -1,16 +1,8 @@
-class ArticleMetaCtrl {
-  constructor() {
-    'ngInject';
-    this.test = "Jacob!"
-  }
-}
-
 let ArticleMeta= {
   bindings: {
-    for: '='
+    article: '='
   },
   transclude: true,
-  controller: ArticleMetaCtrl,
   templateUrl: 'components/article-helpers/article-meta.html'
 };
 

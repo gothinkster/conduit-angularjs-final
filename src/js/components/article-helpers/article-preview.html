@@ -1,11 +1,11 @@
 <div class="post-preview">
-  <article-meta for="$ctrl.for">
-    <favorite-btn for="$ctrl.for" class="pull-xs-right">{{$ctrl.for.favoritesCount}}</favorite-btn>
+  <article-meta article="$ctrl.article">
+    <favorite-btn article="$ctrl.article" class="pull-xs-right">{{$ctrl.article.favoritesCount}}</favorite-btn>
   </article-meta>
 
-  <a ui-sref="app.article({ slug: $ctrl.for.slug })" class="preview-link">
-    <h1 ng-bind="$ctrl.for.title"></h1>
-    <p ng-bind="$ctrl.for.description"></p>
+  <a ui-sref="app.article({ slug: $ctrl.article.slug })" class="preview-link">
+    <h1 ng-bind="$ctrl.article.title"></h1>
+    <p ng-bind="$ctrl.article.description"></p>
     <span>Read more...</span>
   </a>
 </div>

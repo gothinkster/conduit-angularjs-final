@@ -1,6 +1,6 @@
 <nav class="navbar navbar-light">
   <div class="container">
-    <a class="navbar-brand" ui-sref="app.home" ng-bind="::$ctrl._AppConstants.appName | lowercase"></a>
+    <a class="navbar-brand" ui-sref="app.home" ng-bind="::$ctrl.appName | lowercase"></a>
 
     <!-- Show this for logged out users -->
     <ul class="nav navbar-nav pull-xs-right" show-authed="false">
@@ -33,11 +33,11 @@
         </a>
       </li>
       <li class="nav-item">
-        <a class="nav-link" ui-sref-active="active" ui-sref="app.profile.main({ username: $ctrl._User.current.username })">
-          <img src="http://i.imgur.com/Xzm3mI0.jpg" style="height: 26px;
+        <a class="nav-link" ui-sref-active="active" ui-sref="app.profile.main({ username: $ctrl.currentUser.username })">
+          <img ng-src="{{$ctrl.currentUser.image}}" style="height: 26px;
     border-radius: 50px;
     float: left;
-    margin-right: 2px;"/>&nbsp;{{ $ctrl._User.current.username }}
+    margin-right: 2px;"/>&nbsp;{{ $ctrl.currentUser.username }}
         </a>
       </li>
     </ul>

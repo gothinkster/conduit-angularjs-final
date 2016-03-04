@@ -1,12 +1,13 @@
 import marked from 'marked';
 
 class ArticleCtrl {
-  constructor(article, Comments, $sce, $rootScope) {
+  constructor(article, User, Comments, $sce, $rootScope) {
     'ngInject';
 
     this.article = article;
-
     this._Comments = Comments;
+
+    this.currentUser = User.current;
 
     // Update the title of this page
     $rootScope.setPageTitle(this.article.title);
@@ -47,9 +48,6 @@ class ArticleCtrl {
     this._Comments.destroy(commentId, this.article.slug).then(
       (success) => {
         this.comments.splice(index, 1);
-      },
-      (err) => {
-        console.log('error')
       }
     );
 

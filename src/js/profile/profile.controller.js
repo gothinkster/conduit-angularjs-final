@@ -1,5 +1,5 @@
 class ProfileCtrl {
-  constructor(profile, User, $state, $rootScope) {
+  constructor(profile, User, $state) {
     'ngInject';
 
     // The profile for this page, resolved by UI Router

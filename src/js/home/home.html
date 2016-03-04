@@ -2,7 +2,7 @@
 
   <div class="banner" show-authed="false">
     <div class="container">
-      <h1 class="logo-font" ng-bind="::$ctrl._AppConstants.appName | lowercase"></h1>
+      <h1 class="logo-font" ng-bind="::$ctrl.appName | lowercase"></h1>
       <p>A place to share your knowledge.</p>
     </div>
   </div>
@@ -43,8 +43,8 @@
                ng-repeat="tagName in $ctrl.tags"
                ng-bind="tagName"></a>
           </div>
-          <div ng-hide="!$ctrl.loadingTags">Loading tags...</div>
-          <div class="post-preview" ng-show="!$ctrl.loadingTags && !$ctrl.tags.length">No tags are here... yet.</div>
+          <div ng-show="!$ctrl.tagsLoaded">Loading tags...</div>
+          <div class="post-preview" ng-show="$ctrl.tagsLoaded && !$ctrl.tags.length">No tags are here... yet.</div>
         </div>
       </div>
 

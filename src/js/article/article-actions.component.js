@@ -7,7 +7,7 @@ class ArticleActionsCtrl {
 
     // The user can only edit/delete this comment if they are the author
     if (User.current) {
-      this.canModify = (User.current.username === this.for.author.username);
+      this.canModify = (User.current.username === this.article.author.username);
     } else {
       this.canModify = false;
     }
@@ -16,7 +16,7 @@ class ArticleActionsCtrl {
 
   deleteArticle() {
     this.isDeleting = true;
-    this._Articles.destroy(this.for.slug).then(
+    this._Articles.destroy(this.article.slug).then(
       (success) => this._$state.go('app.home'),
       (err) => this._$state.go('app.home')
     );
@@ -26,7 +26,7 @@ class ArticleActionsCtrl {
 
 let ArticleActions = {
   bindings: {
-    for: '='
+    article: '='
   },
   controller: ArticleActionsCtrl,
   templateUrl: 'article/article-actions.html'

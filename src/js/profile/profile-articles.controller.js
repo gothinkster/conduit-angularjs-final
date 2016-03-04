@@ -13,9 +13,13 @@ class ProfileArticlesCtrl {
     // `main` state's filter should be by author
     if (this.profileState === 'main') {
       this.listConfig.filters = {author: this.profile.username};
+      // Set page title
+      $rootScope.setPageTitle('@' + this.profile.username);
 
     } else if (this.profileState === 'favorites') {
       this.listConfig.filters = {favorited: this.profile.username};
+      // Set page title
+      $rootScope.setPageTitle(`Articles favorited by ${this.profile.username}`);
     }
 
 
