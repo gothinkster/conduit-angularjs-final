@@ -2,9 +2,8 @@ class EditorCtrl {
   constructor(Articles, article, $state) {
     'ngInject';
 
+    this._Articles = Articles;
     this._$state = $state;
-
-    this.tagField = '';
 
     if (!article) {
       this.article = {
@@ -36,7 +35,7 @@ class EditorCtrl {
   submit() {
     this.isSubmitting = true;
 
-    Articles.save(this.article).then(
+    this._Articles.save(this.article).then(
       (newArticle) => {
         this._$state.go('app.article', { slug: newArticle.slug });
       },

@@ -12,10 +12,13 @@ class ArticleCtrl {
     // Update the title of this page
     $rootScope.setPageTitle(this.article.title);
 
+    // Transform the markdown into HTML
     this.article.body = $sce.trustAsHtml(marked(this.article.body));
 
     // Get comments for this article
-    Comments.getAll(this.article.slug).then((comments) => this.comments = comments);
+    Comments.getAll(this.article.slug).then(
+      (comments) => this.comments = comments
+    );
 
     // Initialize blank comment form
     this.resetCommentForm();

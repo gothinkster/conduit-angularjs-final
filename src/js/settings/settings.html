@@ -5,7 +5,7 @@
 
         <h1 class="text-xs-center">Your Settings</h1>
 
-        <list-errors from="$ctrl.errors"></list-errors>
+        <list-errors errors="$ctrl.errors"></list-errors>
 
         <form ng-submit="$ctrl.submitForm()">
           <fieldset ng-disabled="$ctrl.isSubmitting">

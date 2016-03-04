@@ -3,7 +3,6 @@ class ListPaginationCtrl {
     'ngInject';
 
     this._$scope = $scope;
-
   }
 
   pageRange(total) {

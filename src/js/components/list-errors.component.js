@@ -1,6 +1,6 @@
 let ListErrors= {
   bindings: {
-    from: '='
+    errors: '='
   },
   templateUrl: 'components/list-errors.html'
 };

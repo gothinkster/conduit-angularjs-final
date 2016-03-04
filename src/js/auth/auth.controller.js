@@ -1,28 +1,18 @@
 class AuthCtrl {
-  constructor(User, AppConstants, $state) {
+  constructor(User, $state) {
     'ngInject';
 
-    // Attach our services to this controller
-    this._AppConstants = AppConstants;
     this._User = User;
     this._$state = $state;
 
     this.title = $state.current.title;
-    this.isSubmitting = false;
     this.authType = $state.current.name.replace('app.', '');
-
-
-    this.formData = {};
-    this.errors = null;
-
   }
 
-  // do stuff
-  submitForm () {
 
+  submitForm () {
     this.isSubmitting = true;
 
-    // if (!this._Auth.isAuthed()) {
     this._User.attemptAuth(this.authType, this.formData).then(
       // Callback for success
       (res) => {

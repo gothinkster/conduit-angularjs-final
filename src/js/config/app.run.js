@@ -9,7 +9,7 @@ function AppRun(AppConstants, $rootScope) {
   // Helper method for setting the page's title
   $rootScope.setPageTitle = (title) => {
     $rootScope.pageTitle = '';
-    if ( title ) {
+    if (title) {
       $rootScope.pageTitle += title;
       $rootScope.pageTitle += ' \u2014 ';
     }

@@ -6,8 +6,6 @@ export default class JWT {
     this._$window = $window;
   }
 
-
-  // JWT Methods
   parse(token) {
     let base64Url = token.split('.')[1];
     let base64 = base64Url.replace('-', '+').replace('_', '/');
