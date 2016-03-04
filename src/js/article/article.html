@@ -1,11 +1,10 @@
-
 <div class="post-page">
 
+  <!-- Banner for article title, action buttons -->
   <div class="banner">
     <div class="container">
 
       <h1 ng-bind="::$ctrl.article.title"></h1>
-
       <article-actions article="$ctrl.article"></article-actions>
 
     </div>
@@ -13,8 +12,10 @@
 
 
 
+  <!-- Main view. Contains article html and comments -->
   <div class="container page">
 
+    <!-- Article's HTML rendered here -->
     <div class="row post-content">
       <div class="col-xs-12" ng-bind-html="::$ctrl.article.body"></div>
     </div>
@@ -25,6 +26,7 @@
       <article-actions article="$ctrl.article"></article-actions>
     </div>
 
+    <!-- Comments section -->
     <div class="row">
       <div class="col-xs-12 col-md-8 offset-md-2">
 
@@ -32,7 +34,11 @@
           <list-errors from="$ctrl.commentForm.errors"></list-errors>
           <form class="card comment-form" ng-submit="$ctrl.addComment()">
             <div class="card-block">
-              <textarea class="form-control" placeholder="Write a comment..." rows="3" ng-model="$ctrl.commentForm.body"></textarea>
+              <textarea class="form-control"
+                placeholder="Write a comment..."
+                rows="3"
+                ng-model="$ctrl.commentForm.body">
+              </textarea>
             </div>
             <div class="card-footer">
               <img ng-src="{{::$ctrl.currentUser.image}}" class="comment-author-img" />
@@ -47,7 +53,10 @@
           <a ui-sref="app.login">Sign in</a> or <a ui-sref="app.register">sign up</a> to add comments on this article.
         </p>
 
-        <comment ng-repeat="cmt in $ctrl.comments" data="cmt" delete-cb="$ctrl.deleteComment(cmt.id, $index)"></comment>
+        <comment ng-repeat="cmt in $ctrl.comments"
+          data="cmt"
+          delete-cb="$ctrl.deleteComment(cmt.id, $index)">
+        </comment>
 
       </div>
     </div>

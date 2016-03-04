@@ -2,12 +2,18 @@
 
   <!-- If current user is the author, show edit/delete buttons -->
   <span ng-show="$ctrl.canModify">
-    <a ui-sref="app.editor({ slug: $ctrl.article.slug })" class="btn btn-outline-secondary btn-sm">
+
+    <a class="btn btn-outline-secondary btn-sm"
+      ui-sref="app.editor({ slug: $ctrl.article.slug })">
       <i class="ion-edit"></i> Edit Article
     </a>
-    <button class="btn btn-outline-danger btn-sm" ng-class="{disabled: $ctrl.isDeleting}" ng-click="$ctrl.deleteArticle()">
+
+    <button class="btn btn-outline-danger btn-sm"
+      ng-class="{disabled: $ctrl.isDeleting}"
+      ng-click="$ctrl.deleteArticle()">
       <i class="ion-trash-a"></i> Delete Article
     </button>
+
   </span>
 
   <!-- Otherwise, show favorite & follow buttons -->
