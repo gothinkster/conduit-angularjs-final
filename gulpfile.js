@@ -65,7 +65,10 @@ gulp.task('views', function() {
       .pipe(gulp.dest('./src/js/config/'));
 });
 
-gulp.task('default',function() {
+gulp.task('default', ['sass', 'html', 'views'], function() {
+
+  gulp.start(['browserify']);
+
   browserSync.init(['./build/**/**.**'], {
     server: "./build",
     port: 4000,
@@ -73,8 +76,6 @@ gulp.task('default',function() {
       port: 4001
     }
   });
-
-  gulp.start(['sass', 'html', 'views', 'browserify']);
 
   gulp.watch(sassFiles, ['sass']);
   gulp.watch("src/index.html", ['html']);
