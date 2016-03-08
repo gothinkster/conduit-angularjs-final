@@ -3,12 +3,12 @@
   ng-repeat="article in $ctrl.list">
 </article-preview>
 
-<div class="post-preview"
+<div class="article-preview"
   ng-hide="!$ctrl.loading">
   Loading articles...
 </div>
 
-<div class="post-preview"
+<div class="article-preview"
   ng-show="!$ctrl.loading && !$ctrl.list.length">
   No articles are here... yet.
 </div>

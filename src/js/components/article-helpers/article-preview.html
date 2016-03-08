@@ -1,4 +1,4 @@
-<div class="post-preview">
+<div class="article-preview">
   <article-meta article="$ctrl.article">
     <favorite-btn
       article="$ctrl.article"
@@ -11,5 +11,11 @@
     <h1 ng-bind="$ctrl.article.title"></h1>
     <p ng-bind="$ctrl.article.description"></p>
     <span>Read more...</span>
+    <ul class="tag-list">
+      <li class="tag-default tag-pill tag-outline"
+        ng-repeat="tag in $ctrl.article.tagList">
+        {{tag}}
+      </li>
+    </ul>
   </a>
 </div>

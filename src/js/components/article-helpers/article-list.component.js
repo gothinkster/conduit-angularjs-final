@@ -25,10 +25,6 @@ class ArticleListCtrl {
 
     // Set listConfig to the new list's config
     this.listConfig = newList;
-    // Current page always starts at 1
-    this.listConfig.currentPage = 1;
-    // This will be updated when the server responds.
-    this.listConfig.totalPages = 1;
 
     this.runQuery();
   }
@@ -52,10 +48,13 @@ class ArticleListCtrl {
     // Set the limit filter from the component's attribute
     queryConfig.filters.limit = this.limit;
 
-    // If there are pages, add the offset filter
-    if (this.listConfig.currentPage) {
-      queryConfig.filters.offset = (this.limit * (this.listConfig.currentPage - 1));
+    // If there is no page set, set page as 1
+    if (!this.listConfig.currentPage) {
+      this.listConfig.currentPage = 1;
     }
+
+    // Add the offset filter
+    queryConfig.filters.offset = (this.limit * (this.listConfig.currentPage - 1));
 
     // Run the query
     this._Articles

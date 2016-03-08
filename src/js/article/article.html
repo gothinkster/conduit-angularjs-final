@@ -1,4 +1,4 @@
-<div class="post-page">
+<div class="article-page">
 
   <!-- Banner for article title, action buttons -->
   <div class="banner">
@@ -15,14 +15,25 @@
   <!-- Main view. Contains article html and comments -->
   <div class="container page">
 
-    <!-- Article's HTML rendered here -->
-    <div class="row post-content">
-      <div class="col-xs-12" ng-bind-html="::$ctrl.article.body"></div>
+    <!-- Article's HTML & tags rendered here -->
+    <div class="row article-content">
+      <div class="col-xs-12">
+
+        <div ng-bind-html="::$ctrl.article.body"></div>
+
+        <ul class="tag-list">
+          <li class="tag-default tag-pill tag-outline"
+            ng-repeat="tag in ::$ctrl.article.tagList">
+            {{ tag }}
+          </li>
+        </ul>
+
+      </div>
     </div>
 
     <hr />
 
-    <div class="post-actions">
+    <div class="article-actions">
       <article-actions article="$ctrl.article"></article-actions>
     </div>
 

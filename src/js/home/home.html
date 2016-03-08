@@ -55,7 +55,7 @@
           <p>Popular Tags</p>
 
           <div class="tag-list" ng-show="$ctrl.tags">
-            <a href="" class="label label-pill label-default"
+            <a href="" class="tag-default tag-pill"
               ng-click="$ctrl.changeList({ type: 'all', filters: { tag: tagName } })"
               ng-repeat="tagName in $ctrl.tags"
               ng-bind="tagName">
