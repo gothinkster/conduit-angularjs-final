@@ -27,7 +27,7 @@ export default class Articles {
   // Creates or updates an article
   save(article) {
 
-    let request = {}
+    let request = {};
 
 
     // If there's a slug, perform an update via PUT w/ article's slug
@@ -69,9 +69,6 @@ export default class Articles {
   }
 
   /*
-    `query` is typically used as a private method, but can be used
-    in controllers if necessary.
-
     Config object spec:
 
     {

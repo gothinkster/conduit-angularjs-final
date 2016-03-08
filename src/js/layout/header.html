@@ -68,10 +68,8 @@
         <a class="nav-link"
           ui-sref-active="active"
           ui-sref="app.profile.main({ username: $ctrl.currentUser.username })">
-          <img ng-src="{{$ctrl.currentUser.image}}" style="height: 26px;
-    border-radius: 50px;
-    float: left;
-    margin-right: 2px;"/>&nbsp;{{ $ctrl.currentUser.username }}
+          <img ng-src="{{$ctrl.currentUser.image}}" class="user-pic"/>
+          {{ $ctrl.currentUser.username }}
         </a>
       </li>
 
